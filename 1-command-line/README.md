@@ -24,6 +24,9 @@ This video explains the design of the shell and the following aspects:
 >
 > Make sure to turn on the volume of the following videos. By default, the videos are muted by GitHub.
 
+https://github.com/heinten/Introduction-into-CFD/assets/62593982/3ad30b82-fba2-460f-9b84-4b6a7bc28d9a
+
+
 
 ## Folder directories
 
@@ -32,6 +35,9 @@ Managing your directories and file structure in your computer or servers is an i
 This video focuses on the following topics:
  - Listing the content of a directory using `ls`. Additional information can be shown when using the additional argument `-l`.
  - Changing the working directory using the command `cd`.
+
+https://github.com/heinten/Introduction-into-CFD/assets/62593982/0a05b5b3-cfd4-4733-a0d7-88f35250c015
+
 
 
 ## Current working directory
@@ -42,6 +48,9 @@ This video explains the following topics:
  - Print out the current working directory using `pwd`.
  - Special directory names are introduced: `..` stands for the *parent directory*; `.` for the *current directory*, and `~` for the `home` directory.
 
+https://github.com/heinten/Introduction-into-CFD/assets/62593982/26ee4252-c547-47e7-a265-2337dabe9847
+
+
 
 ## Organizing your files
 With the terminal, you can use commands to organize your files into directories, move files, copy or remove the files.
@@ -50,6 +59,8 @@ This video emphasizes on the following topics:
  - Creating new directories with `mkdir`.
  - Move files and folders around or rename them using `mv`.
  - Introduction of the wildcard `*`, which stands for one or more occurrences for any character.
+
+https://github.com/heinten/Introduction-into-CFD/assets/62593982/82e553da-a873-4ece-aba2-ab24390c19cb
 
 
 
@@ -60,6 +71,9 @@ With the terminal, you can use commands to view files, let's learn how to do it 
 This video focuses on the following topics:
  - Viewing files using `cat`, `less` and the top and bottom lines with `head` and `tail`, respectively.
  - Editing files with the terminal-based editor `nano`.
+
+https://github.com/heinten/Introduction-into-CFD/assets/62593982/dff161b7-f7c2-4730-a2b7-a67e4cde6ee0
+
 
 
 ## Removing files or directories
@@ -75,4 +89,5 @@ This video shows the following aspects:
 >
 > The `rm` command deletes files and directories without a waring and without using the Recycle Bin or Trash Can. Therefore, these files cannot be recovered. Be particularly careful when combining this command with wildcards, as complete folders and be deleted easily by mistake!
 
+https://github.com/heinten/Introduction-into-CFD/assets/62593982/7bbf0fe2-b883-44f2-82a8-d810afc9562c
 
