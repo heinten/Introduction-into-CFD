@@ -17,9 +17,17 @@ You can navigate through the repository and display the indidual instructions us
 
 <img src="./figures/user-guide-navigation.png" width="90%">
 
-The documentation is also part of the downloaded archive and can be visualized using a text editor. However, the correct formatting is only ensured when viewing the documentation through a web browser on the GitLab webpage. The idea of working through the user guide is as follows: Open the corresponding documentations and Readme files with a web browser and follow them closely. At the same time, open a terminal and go through the commands and instructions provided.
+At the top of the repository or when switching to a certain folder, the corresponding `README.md` is always shown by default below the files list. This is the instruction for this specific tutorial. The idea of working through the user guide is as follows: Open the corresponding documentation and Readme files with a web browser and follow them closely. In parallel, open a terminal and go through the commands and instructions provided.
 
-Throughout the user guide in this repository, commands for the command line are formatted as follows:
+The respository contains pre-configured OpenFOAM cases, which will be used as tutorials. Therefore, all files inside this GitHub repository have to be downloaded. This can be done by clicking the green **Code** button at the top right and select **Download ZIP**:
+
+<img src="./figures/user-guide-download.png" width="90%">
+
+Save the archive wherever you want to run your simulations (e.g. a new `simulations` directory inside your `home`), unzip it and keep it ready for the OpenFOAM tutorials.
+
+---
+
+Throughout the user guide, commands for the command line are formatted as follows:
 ```
 pwd
 ```
