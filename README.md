@@ -52,3 +52,8 @@ Content of files within the user guide are shown with line numbers as follows:
 14  // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 15
 ```
+
+
+## Disclamer
+
+This offering is not approved or endorsed by OpenCFD Limited, the producer of the OpenFOAM software and owner of the OPENFOAM® and OpenCFD® trademarks.
