@@ -56,12 +56,15 @@ Next, you must change the working directory of the terminal to the `elbow` folde
 cd ~/Downloads/openfoam-introduction-main/2-elbow/elbow
 ```
 
-Once ready, you can scroll to the top of the page and click on the documentation for the first part called [*1-pre-processing.md*](./1-pre-processing.sh).
+Once ready, you can scroll to the top of the page and click on the documentation for the first part called [*1-pre-processing.md*](./1-pre-processing.md).
 
 
 ## Additional tasks
 
-Once you have successfully finished the second tutoral, you can solve the following tasks:
+Once you have successfully finished the second tutoral, you can solve the following, additional tasks:
 
- 1. Repeat the simulations, but increase the inlet velocities by a factor of 3 and plot the residuals. How do they compare to the residuals of the original case?
- 2. Repeat the simulations once more, but this time increase the inlet velocities by a factor of 4 compared to the original case. What is the result of this and how do the residuals look like now? How can you improve the stability of the simulation and gain fully converged results?
+ 1. Copy the `elbow` folder and repeat the simulations, but this time increase the inlet velocities by a factor of 3. Plot the residuals. How do they compare to the residuals of the original case?
+ 2. Repeat the simulations once more, but this time increase the inlet velocities by a factor of 4 compared to the original case. What is the result of this and how do the residuals look like now? How can you improve the stability of the simulation and gain a fully converged solution?
+ 3. Plot the velocity profile at the outlet with ParaView. For this, use the **Plot over Line** filter and specifiy the starting and end points of the corresponding line as follows: Starting point at `(48 64 0)` and end point at `(64 64 0)`.
+ 4. How does the velocity profile at the outlet change, when using a first order upwind discretization scheme for the convective term? For this, replace the entry `bounded Gauss linearUpwindV cellLimited 1;` for `div(phi,U)` with `bounded Gauss upwind` in the file `fvSchemes`.
+ 5. How does the simulation results change, if you set set the uniform pressure at the outlet to $10\\,\times\\,\text{m}^2\text{s}^2$?

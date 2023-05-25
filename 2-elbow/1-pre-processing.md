@@ -146,7 +146,7 @@ Below follow various relevant mesh quality criteria, such as:
 The final output `Mesh OK.` indicates that no critical problems or errors were found during `checkMesh`. Therefore, we can continue with this mesh and proceed with the simulation.
 
 
-> **Note:**
+> **Note**
 >
 > OpenFOAM always operates in a 3 dimensional Cartesian coordinate system and all geometries are generated in 3 dimensions. OpenFOAM solves the case in 3 dimensions by default but can be instructed to solve in 2 dimensions by specifying a ‘special’ `empty` boundary condition on boundaries normal to the (3rd) dimension for which no solution is required. Here, the mesh is fully two-dimensional. Therefore, OpenFOAM imported it and automatically extruded it by one cell in the $z$-direction and created the `frontAndBackPlanes` patch with type `empty`.
 
@@ -313,7 +313,7 @@ Turbulence modeling in the simulation can be set in the `momentumTransport` file
 
 Settings related to the control of time (for transient simulations) or iterations (for steady-state simulations) and reading and writing of the solution data are read in from the `controlDict` file in the `system` folder.
 
-> **Note:**
+> **Note**
 >
 > Regardless of whether steady-state or transient simulations are performed, OpenFOAM always referes to `startTime`, `endTime` and `deltaT`. In transient simulations, these entries possess the physical meaning of time. However, in steady state simulations time is not considered. Therefore, these entries will simply correspond to the start and end of the simulation in terms of iterations. For example, `endTime` simply referes to the number of iterations, at which the simulation is terminated. Therefore, `deltaT` is typically set to 1 so that time itself will simply act as a iteration counter.
 
@@ -438,7 +438,7 @@ All required discretization schemes are defined in the `fvSchemes` file:
 26
 27  divSchemes
 28  {
-29      div(phi,U)      Gauss linearUpwindV cellLimited 1;
+29      div(phi,U)      bounded Gauss linearUpwindV cellLimited 1;
 30
 31      div((nuEff*dev2(T(grad(U))))) Gauss linear;
 32  }
@@ -469,9 +469,11 @@ The different discretization schemes are as follows:
   * `interpolationSchemes` contains the discretizion of interpolating of values from cell centers to face centers. Using the central differencing scheme `linear` is the recommended choice.
   * `snGradSchemes` contains the discretization of wall-normal gradients. Similar to the laplacian schemes, a **correction** is employed for non-orthogonal meshes.
 
-> **Note:**
+> **Note**
 >
-> The `default` entry simply states that all schemes of this mathematical type are discretized equally using the corresponding scheme.
+> Two notes here:
+> - The `default` entry simply states that all schemes of this mathematical type are discretized equally using the corresponding scheme.
+> - The `bounded` keyword in front of the disrectization of the convective flux under `divSchemes` is required for improved stability in steady-state simulations.
 
 
 ## Viewing the mesh

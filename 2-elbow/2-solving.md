@@ -44,9 +44,9 @@ This function object called `printResiduals` of type `residuals` saves the initi
 postProcessing/printResiduals/0/residuals.dat
 ```
 
-> **Note:**
+> **Note**
 >
-> The function object name (here `printResiduals`) can be chosen freely and is only used to distinguish between different function objects.
+> OpenFOAM includes a collection of *Function objects* that offer users the opportunity to closely manage their computational analyses. These objects can be applied to manipulate the simlation during run-time, extract predicted field and derived quantities at run-time or alternatively afterwards. This includes, among others: printing out the residuals, reporting the maximum / mininum values of a certain flow variable, calculating mass / volumetric flow rates at boundries, compute forces and force coefficients on objects, compute derived fields such as heat transfer or shear stress rates, and generate images through cutPlanes or iso-surfaces.
 
 Using the `foamMonitor` utility, the residuals can be plotted as function of iterations as follows:
 
@@ -60,6 +60,6 @@ Here, the parameter `-l` indicates that the residuals should be plotted with log
 
 The plot shows that the residuals fall for 200 iterations to $10^{-5}$ for pressure and $10^{-6}$ for the velocity components, respectively. Once 250 iterations have passed, the oscillating behaviour of the residuals indicates no further progress in convergence. At this point, the simulation can be considered *converged* and the next step is the post-processing as descriped in file [*3-post-processing.md*](./3-post-processing.md).
 
-> **Note:**
+> **Note**
 >
 > In order to stop the `foamMonitor` process in the terminal, simply press the following two keys simultaneously: `Ctrl + C`.

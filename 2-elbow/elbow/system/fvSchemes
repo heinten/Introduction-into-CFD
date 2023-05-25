@@ -26,7 +26,7 @@ gradSchemes
 
 divSchemes
 {
-    div(phi,U)      Gauss linearUpwindV cellLimited 1;
+    div(phi,U)      bounded Gauss linearUpwindV cellLimited 1;
     
     div((nuEff*dev2(T(grad(U))))) Gauss linear;
 }

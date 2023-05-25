@@ -23,7 +23,7 @@ The velocity field looks like expected: The velocity magnitude at the left inlet
 
 <img src="./figures/paraview-velocity-contour.png" width="40%">
 
-> **Note:**
+> **Note**
 >
 > It is important to note that there are two ways to display fields in ParaView: either as interpolated values indicated by a *dot* symbol in front of the variable name, and as cell center values indicated by a *cell* symbol in front of the variable name. The cell center values are recommended for inspection of the results as interpolated values might obscure numerical problems and unphysical values, such as the checker-boarding in this case.
 
