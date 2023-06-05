@@ -38,11 +38,7 @@ By default, the residuals are only printed to the terminal window. In order to v
 58  // ************************************************************************* //
 ```
 
-This function object called `printResiduals` of type `residuals` saves the initial residuals of the fields `(p U)`, so pressure and velocity, during runtime in the `postProcessing` folder under the following path:
-
-```
-postProcessing/printResiduals/0/residuals.dat
-```
+This function object called `printResiduals` of type `residuals` saves the initial residuals of the fields `(p U)`, so pressure and velocity, during runtime. Therefore, a new folder called `postProcessing` is automatically created inside the case folder. So in this example, the residuals are stored under the following path: `postProcessing/printResiduals/0/residuals.dat`
 
 > **Note**
 >
