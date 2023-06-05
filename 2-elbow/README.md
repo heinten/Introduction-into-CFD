@@ -1,5 +1,16 @@
 # Elbow
 
+## Objectives
+
+The objectives for this tutorial are as follows:
+  * Familiarize yourself with the OpenFOAM case structure,
+  * Import a two-dimensional mesh into OpenFOAM and check its quality,
+  * Setup of boundary conditions,
+  * Control of simulation run using the file `controlDict`,
+  * Solving the steady-state CFD problem with `simpleFoam` and monitor convergence using `foamMonitor`, 
+  * Usage of ParaView for visualizing the mesh, the velocity contours and vectors.
+  
+
 
 ## Overview
 
@@ -53,7 +64,7 @@ of10
 Next, you must change the working directory of the terminal to the `elbow` folder inside the downloaded repository directory. If the archive of this repository has been downloaded and extracted in the `Downloads` folder of your home, this can be achieved by typing:
 
 ```
-cd ~/Downloads/openfoam-introduction-main/2-elbow/elbow
+cd ~/Downloads/Introduction-into-CFD-main/2-elbow/elbow
 ```
 
 Once ready, you can scroll to the top of the page and click on the documentation for the first part called [*1-pre-processing.md*](./1-pre-processing.md).
@@ -63,8 +74,8 @@ Once ready, you can scroll to the top of the page and click on the documentation
 
 Once you have successfully finished the second tutoral, you can solve the following, additional tasks:
 
- 1. Copy the `elbow` folder and repeat the simulations, but this time increase the inlet velocities by a factor of 3. Plot the residuals. How do they compare to the residuals of the original case?
- 2. Repeat the simulations once more, but this time increase the inlet velocities by a factor of 4 compared to the original case. What is the result of this and how do the residuals look like now? How can you improve the stability of the simulation and gain a fully converged solution?
+ 1. Copy the `elbow` folder and repeat the simulations, but this time increase the velocity of the bottom inlet to $15\\,\text{m/s}$. Plot the residuals. How do they compare to the residuals of the original case?
+ 2. Repeat the simulations once more, but this time increase the velocity at the bottom inlet to $18\\,\text{m/s}$. What is the result of this and how do the residuals look like now? How can you improve the stability of the simulation?
  3. Plot the velocity profile at the outlet with ParaView. For this, use the **Plot over Line** filter and specifiy the starting and end points of the corresponding line as follows: Starting point at `(48 64 0)` and end point at `(64 64 0)`.
  4. How does the velocity profile at the outlet change, when using a first order upwind discretization scheme for the convective term? For this, replace the entry `bounded Gauss linearUpwindV cellLimited 1;` for `div(phi,U)` with `bounded Gauss upwind;` in the file `fvSchemes`.
- 5. How does the simulation results change, if you set set the uniform pressure at the outlet to $1000\,\text{m}^2\text{s}^2$?
+ 5. How does the simulation results change, if you set set the uniform pressure at the outlet to $1000\\,\text{m}^2\text{s}^2$?

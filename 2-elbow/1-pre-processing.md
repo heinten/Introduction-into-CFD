@@ -200,10 +200,10 @@ There are 3 principal entries in ﬁeld data ﬁles:
 
 **dimensions**
 
-  * Specifies the dimensions of the field, here kinematic pressure with the units $\text{m}^2\text{/s}^{2}$. In general, algebraic operations must be performed on properties using consistent units of measurement; in particular, addition, subtraction and equality are only physically meaningful for properties of the same dimensional units. As a safeguard against implementing a meaningless operation, OpenFOAM attaches dimensions to ﬁeld data and physical properties and performs dimension checking on any tensor operation. The dimension set in OpenFOAM consists of 7 scalars delimited by square backets, e.g.
+  * Specifies the dimensions of the field, here kinematic pressure with the units $\text{m}^2\text{/s}^{2}$. In general, algebraic operations must be performed on properties using consistent units of measurement; in particular, addition, subtraction and equality are only physically meaningful for properties of the same dimensional units. As a safeguard against implementing a meaningless operation, OpenFOAM attaches dimensions to ﬁeld data and physical properties and performs dimension checking on any tensor operation. The dimension set in OpenFOAM consists of 7 scalars delimited by square backets, e.g. for kinematic pressure
 
 ```
-    [0 2 -1 0 0 0 0]
+    [0 2 -2 0 0 0 0]
 ```
 where each of the values corresponds to the power of each of the base units of measurement listed in the following table:
 | No. | Property           | SI unit       |
@@ -500,7 +500,7 @@ In the **Pipeline Browser** on the left, the user can see that ParaView has open
 
 <img src="./figures/paraview-mesh.png" width="80%">
 
-> **Note:**
+> **Note**
 >
 > Many advanced parameters in the Properties panel are only available by clicking the Advanced Properties gearwheel button at the top of the Properties window, next to the search box.
 
