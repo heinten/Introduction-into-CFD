@@ -78,4 +78,4 @@ Once you have successfully finished the second tutoral, you can solve the follow
  2. Repeat the simulations once more, but this time increase the velocity at the bottom inlet to $18\\,\text{m/s}$. What is the result of this and how do the residuals look like now? How can you improve the stability of the simulation?
  3. Plot the velocity profile at the outlet with ParaView. For this, use the **Plot over Line** filter and specifiy the starting and end points of the corresponding line as follows: Starting point at `(48 64 0)` and end point at `(64 64 0)`.
  4. How does the velocity profile at the outlet change, when using a first order upwind discretization scheme for the convective term? For this, replace the entry `bounded Gauss linearUpwindV cellLimited 1;` for `div(phi,U)` with `bounded Gauss upwind;` in the file `fvSchemes`.
- 5. How does the simulation results change, if you set set the uniform pressure at the outlet to $1000\\,\text{m}^2\text{s}^2$?
+ 5. How does the simulation results change, if you set set the uniform pressure at the outlet to $1000\\,\text{m}^2/\text{s}^2$?
