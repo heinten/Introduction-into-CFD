@@ -24,3 +24,21 @@ In order to work through the OpenFOAM tutorial, make sure to download the latest
 cd ~/Downloads/Introduction-into-CFD-main/3-backward-step/backward-step
 ```
 
+Then, you have to source OpenFOAM by either typing
+
+```
+source /app2/OpenFOAM/OpenFOAM-10/etc/bashrc
+```
+
+*or* if you set up the alias in the previous tutorial
+
+```
+of10
+```
+
+into the terminal.
+
+Once ready, you can scroll to the top of the page and click on the documentation for the first part called [*1-pre-processing.md*](./1-pre-processing.md).
+
+## Additional Tasks
+
