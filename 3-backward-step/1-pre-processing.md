@@ -105,7 +105,7 @@ Checking geometry...
     Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
 ```
 
-In order to maniupulate the mesh, e.g. scale, translate or rotate, the OpenFOAM utility `transformPoints` can be used. For scaling by a factor of 0.1, e.g. reducing the mesh size to 1/10th, the command looks as follows:
+In order to maniupulate the mesh, e.g. scale, translate or rotate, the OpenFOAM utility `transformPoints` can be used. For example, reducing the mesh size to 1/10th and thus applying a scaling factor of 0.1 in all three dimensions, the command would look as follows:
 
 ```
 transformPoints "scale=(0.1 0.1 0.1)"
