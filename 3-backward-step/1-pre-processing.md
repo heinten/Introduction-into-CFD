@@ -93,6 +93,10 @@ The two-dimensional mesh for this case can be finally be created and stored into
 blockMesh
 ```
 
+> **Task**
+>
+> Used the `blockMesh` utlility to create the mesh for this tutorial.
+
 
 ## Mesh manipulation
 
@@ -110,7 +114,9 @@ In order to maniupulate the mesh, e.g. scale, translate or rotate, the OpenFOAM 
 transformPoints "scale=(0.1 0.1 0.1)"
 ```
 
-Perform a `checkMesh`, determine the required scaling factors, and scale the mesh according to the correct dimensions using `transformPoints`.
+> **Task**
+>
+> Perform a `checkMesh`, determine the required scaling factors, and scale the mesh according to the correct dimensions using `transformPoints`.
 
 
 ## Material properties
