@@ -1,10 +1,11 @@
 # Introduction into Computational Fluid Dynamics
 
 
-This repository complements the course **Introduction into Computational Fluid Dynamics** and provides currently two tutorials designed for familiarizing with the Linux command line, OpenFOAM, and post-processing tool ParaView:
+This repository complements the course **Introduction into Computational Fluid Dynamics** and provides currently three guided tutorials designed for familiarizing with the Linux command line, OpenFOAM, and post-processing tool ParaView:
 
  1. A introduction into the Linux command line ([Link](./1-command-line/README.md))
  2. Simulating of an incompressible flow through an elbow ([Link](./2-elbow/README.md))
+ 3. Simulation of the transient, incompressible flow over a backward-facing step ([Link](./3-backward-step/README.md))
 
 More tutorials will be added throughout the semester.
 

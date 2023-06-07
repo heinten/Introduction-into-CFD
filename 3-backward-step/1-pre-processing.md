@@ -87,15 +87,12 @@ which simply means that the patch called `inlet` is of type `patch` and consists
 >
 > The detailed description of all entries in the `blockMeshDict` is omitted here due to its complexity. You can consult the official user manual [section 5.3](https://doc.cfd.direct/openfoam/user-guide-v10/blockmesh#x26-1850005.3) for a thorough introduction into `blockMesh`.
 
-The two-dimensional mesh for this case can be finally be created and stored into the `constant/polyMesh` directory by typing the following command into the terminal:
+The two-dimensional mesh for this case can finally be created and stored into the `constant/polyMesh`. For this, execute the `blockMesh` command in the terminal with the current working directory being the backward-step folder:
 
 ```
 blockMesh
 ```
 
-> **Task**
->
-> Used the `blockMesh` utlility to create the mesh for this tutorial.
 
 
 ## Mesh manipulation
@@ -114,19 +111,30 @@ In order to maniupulate the mesh, e.g. scale, translate or rotate, the OpenFOAM 
 transformPoints "scale=(0.1 0.1 0.1)"
 ```
 
-> **Task**
->
-> Perform a `checkMesh`, determine the required scaling factors, and scale the mesh according to the correct dimensions using `transformPoints`.
+
+## Physical properties
+
+The physical properties for the fluid, such as kinematic viscosity, are stored in the `physicalProperties` file in the `constant` directory. In this tutorial, the Reynolds-number at the inlet should be 250. Based on the inlet velocity $U_\text{in}$ and the channel height at the inlet $H$, the kinematic viscosity can be computed based on the equation for the Reynolds-number:
+
+$$
+\text{Re} = \frac{U_\text{in} H}{\nu}
+$$
 
 
-## Material properties
+## Simulation control
 
-Reynolds-number of 1000 is required
+Settings related to the control of time and reading and writing of the solution data are read in from the `controlDict` file in the `system` folder.
 
+The time step size for this tutorial is defined via the keyword `deltaT`. To achieve temporal accuracy and numerical stability when running `pimpleFoam`, a Courant number of $\text{Co} \approx 0.5$ is recommended. Based on the cell size $\Delta x$, flow velocity $U$, and time step size $\Delta t$, the Courant number is deﬁned for one cell as:
 
-## Time step size
+$$
+\text{Co} = \frac{U \Delta t}{\Delta x}
+$$
 
-Calculate time-step size based on Courant-number
+The ﬂow velocity naturally varies across the domain and the Courant-number limitation must be kept in every cell. Therefore, we have to estimate the time step size based on known values. The cell size of this equidistant mesh is constant everywhere and can be estimated based on the corresponding channel height $H$ and the cell count at the inlet $n$:
 
+$$
+\Delta x = \frac{H}{n}
+$$
 
-## 
+The characteristic velocity in the flow domain $U$ can be approximated to be the inlet velocity $U_\text{in}$. Although the actual flow velocity will probably be higher further downstream the inlet, this give a sufficiently good estimate for computing the time step size $\Delta t$.

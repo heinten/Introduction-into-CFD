@@ -40,5 +40,8 @@ into the terminal.
 
 Once ready, you can scroll to the top of the page and click on the documentation for the first part called [*1-pre-processing.md*](./1-pre-processing.md).
 
-## Additional Tasks
+## Tasks for this tutorial
 
+ - [ ] Create the mesh using `blockMesh`
+ - [ ] Check the mesh quality using `checkMesh` and scale the mesh correctly using `transformPoints` 
+ - [ ] Correctly set the kinematic viscosity to achieve a Reynolds-number of 250 at the inlet.
