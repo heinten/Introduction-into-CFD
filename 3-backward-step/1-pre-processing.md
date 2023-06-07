@@ -23,7 +23,7 @@ backward-step
 3 directories, 8 files
 ```
 
-Compared to the elbow case, only one additional file is present called `blockMeshDict` in the `system` folder.
+Compared to the elbow case, there is only one additional file called `blockMeshDict` in the `system` folder.
 
 
 ## Mesh generation
@@ -58,7 +58,10 @@ These vertices are used to define the three blocks of the block-structured mesh.
 41      hex (0 3 4 1 8 11 12 9)
 42      (50 25 1)
 43      simpleGrading (1 1 1)
-44
+
+...
+
+52  );
 ```
 
 This means that this block contains of vertices with the label 0, 3, 4, 1, 8, 11, 12, and 9. The next line dictates that first block contains 50 cells in *x*-direction, 25 cells in *y*-direction and *1* cell in z-direction. Finally, the block has a completely equidistant mesh with equal cell size. Therefore, the `simpleGrading` coefficients are simply set to 1.
@@ -91,14 +94,23 @@ blockMesh
 ```
 
 
-
 ## Mesh manipulation
 
-CheckMesh reveals...
+Once the mesh has been created with `blockMesh`, it is essential to check the mesh quality using `checkMesh`. The output reveals a perfect mesh quality. However, the mesh is incorrectly scaled as indicated by the bounding box. It shows a overall domain size of $300\\,\text{m}$ in $x$-direction, $50\\,\text{m}$ in $y$-direction, and $1\\,\text{m}$ in $z$-direction:
 
 ```
-transformPoints "scale=(0.001 0.001 0.001)"
+Checking geometry...
+    Overall domain bounding box (-50 -25 -0.5) (250 25 0.5)
+    Mesh has 2 geometric (non-empty/wedge) directions (1 1 0)
 ```
+
+In order to maniupulate the mesh, e.g. scale, translate or rotate, the OpenFOAM utility `transformPoints` can be used. For scaling by a factor of 0.1, e.g. reducing the mesh size to 1/10th, the command looks as follows:
+
+```
+transformPoints "scale=(0.1 0.1 0.1)"
+```
+
+Perform a `checkMesh`, determine the required scaling factors, and scale the mesh according to the correct dimensions using `transformPoints`.
 
 
 ## Material properties
