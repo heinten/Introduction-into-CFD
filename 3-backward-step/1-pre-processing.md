@@ -125,16 +125,16 @@ $$
 
 Settings related to the control of time and reading and writing of the solution data are read in from the `controlDict` file in the `system` folder.
 
-The time step size for this tutorial is defined via the keyword `deltaT`. To achieve temporal accuracy and numerical stability when running `pimpleFoam`, a Courant number of $\text{Co} \approx 0.5$ is recommended. Based on the cell size $\Delta x$, flow velocity $U$, and time step size $\Delta t$, the Courant number is deﬁned for one cell as:
+The time step size for this tutorial is defined via the keyword `deltaT`. To achieve temporal accuracy and numerical stability when running `pimpleFoam`, a Courant number of $\text{Co} \approx 0.5$ is recommended. Based on the cell size $\Delta x$, local flow velocity $U$, and time step size $\Delta t$, the Courant number is deﬁned for one cell as:
 
 $$
 \text{Co} = \frac{U \Delta t}{\Delta x}
 $$
 
-The ﬂow velocity naturally varies across the domain and the Courant-number limitation must be kept in every cell. Therefore, we have to estimate the time step size based on known values. The cell size of this equidistant mesh is constant everywhere and can be estimated based on the corresponding channel height $H$ and the cell count at the inlet $n$:
+The ﬂow velocity naturally varies across the domain and the Courant-number limitation must be kept in every cell. Therefore, we have to estimate the time step size based on known values. The cell size of this equidistant mesh is constant everywhere and can be estimated based on the channel height at the inlet $H$ and the corresponding cell count $n$:
 
 $$
 \Delta x = \frac{H}{n}
 $$
 
-The characteristic velocity in the flow domain $U$ can be approximated to be the inlet velocity $U_\text{in}$. Although the actual flow velocity will probably be higher further downstream the inlet, this give a sufficiently good estimate for computing the time step size $\Delta t$.
+The characteristic velocity in the flow domain $U$ can be approximated to be equal to the inlet velocity $U_\text{in}$. Although the actual flow velocity will probably be higher further downstream the inlet, this give a sufficiently good estimate for computing the time step size $\Delta t$.
