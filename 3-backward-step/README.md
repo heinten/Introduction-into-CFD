@@ -44,6 +44,13 @@ Once ready, you can scroll to the top of the page and click on the documentation
 
  - [ ] Create the mesh using `blockMesh`
  - [ ] Check the mesh quality using `checkMesh` and scale the mesh correctly using `transformPoints` 
- - [ ] Correctly set the kinematic viscosity `nu` to achieve a Reynolds-number of 250 at the inlet.
- - [ ] Set the time step size `deltaT` to keep a maximum Courant number of $\text{Co} \approx 0.5$.
- - [ ] Specify the boundary conditions types and values for velocity and kinematic pressure.
+ - [ ] Specify the boundary conditions types and values for velocity and kinematic pressure
+ - [ ] Correctly set the kinematic viscosity `nu` to achieve a Reynolds-number of 250 at the inlet
+ - [ ] Set the time step size `deltaT` to keep a maximum Courant number of $\text{Co} \approx 0.5$
+ - [ ] Run the simulation using `pimpleFoam` and judge convergence using the average pressure at the inlet
+ - [ ] Visualize the transient velocity field using ParaView and save an animation.
+
+
+## Additional tasks
+
+Once you have successfully finished the third tutoral, you can solve the following, additional tasks:
