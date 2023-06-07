@@ -111,6 +111,15 @@ In order to maniupulate the mesh, e.g. scale, translate or rotate, the OpenFOAM 
 transformPoints "scale=(0.1 0.1 0.1)"
 ```
 
+## Boundary conditions
+
+The boundary conditions for thir tutorial case are best configured in pressure-velocity configuration, as we want to specify an exact inlet velocity and thus Reynolds-number. As a result, velocity is defined at the inlet while static pressure is defined at the outlet.
+
+For the velocity we set a fixed value at the inlet using the `fixedValue` type boundary condition with an uniform inlet velocity of $1\\,\text{m/s}$ in $x$-direction while the outlet is simply specified as type `zeroGradient`. Assuming a velocity of zero at the walls, a `noSlip` type boundary condition is used there.
+
+In contrast, the inlet boundary for pressure is specified as type `zeroGradient` while the outlet boundary is set to type `fixedValue` with a uniform value of $0\\,\text{m}^2\text{/s}^2$. Pressure at solid boundaries are as always of type `zeroGradient`.
+
+
 
 ## Physical properties
 
