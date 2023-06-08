@@ -45,6 +45,8 @@ Using the `foamMonitor` utility, the residuals can be plotted as function of ite
 foamMonitor -l postProcessing/printResiduals/0/residuals.dat
 ```
 
+<img src="./figures/backward-step-residuals.png" width="60%">
+
 #### SurfaceFieldValue function object
 
 The second function object is of type `surfaceFieldValue` and used to monitor the area-weighted pressure at the inlet for each time step. This can be considered a second variable for juding the convergence of the simulation. Furthermore, since the static pressure at the outlet is set to 0, it acts as a measure for (kinematic) pressure loss between inlet and outlet. It is configured as follows:
@@ -69,7 +71,7 @@ Here, we want to compute a certain value from the patch, hence `regionType` set 
 
 > **Note**
 >
-> The `surfaceFieldValue` is a powerful tool for computing a wide range of operations on patches and individual face zones, e.g. area average, area integral, sum, minimum or maximum values, or coefficient of variation among others.
+> The `surfaceFieldValue` is a powerful tool for performing a wide range of operations on patches and face zones, e.g. area average, area integral, sum, minimum or maximum values, or coefficient of variation among others.
 
 #### Probes function object
 
@@ -81,7 +83,7 @@ The third function object is of type `probes` and designed to monitor field vari
 74          type            probes;
 75          libs            ("libsampling.so");
 76
-77          fields          (U);
+77          fields          ( U );
 78  
 79          probeLocations
 80          (
