@@ -21,18 +21,18 @@ boundaryField
 {
     inlet
     {
-        type            zeroGradient;
-    }
-
-    outlet
-    {
         type            fixedValue;
         value           uniform 0;
     }
 
-    walls
+    outlet
     {
         type            zeroGradient;
+    }
+
+    walls
+    {
+        type            noSlip;
     }
 
     frontAndBack
