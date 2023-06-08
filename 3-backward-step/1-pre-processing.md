@@ -129,6 +129,7 @@ $$
 \text{Re} = \frac{U_\text{in} H}{\nu}
 $$
 
+Although the density is not directly needed for solving the governing equations, we assume that the fluid has a density of $1000\\,\text{kg/m}^3$.
 
 ## Simulation control
 

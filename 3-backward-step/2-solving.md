@@ -45,14 +45,17 @@ Using the `foamMonitor` utility, the residuals can be plotted as function of ite
 foamMonitor -l postProcessing/printResiduals/0/residuals.dat
 ```
 
+The resulting plot should like like following:
+
 <img src="./figures/backward-step-residuals.png" width="60%">
+
 
 #### SurfaceFieldValue function object
 
 The second function object is of type `surfaceFieldValue` and used to monitor the area-weighted pressure at the inlet for each time step. This can be considered a second variable for juding the convergence of the simulation. Furthermore, since the static pressure at the outlet is set to 0, it acts as a measure for (kinematic) pressure loss between inlet and outlet. It is configured as follows:
 
 ```
-58      averagePressure
+58      averageInletPressure
 59      {
 60          type            surfaceFieldValue;
 61          libs            ("libfieldFunctionObjects.so");
