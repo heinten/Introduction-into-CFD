@@ -2,6 +2,13 @@
 
 Once the simulation has finished and all the time directories are written out, the simulation results can be analysed. First, let us examine the data written by the function objects: the average inlet pressure and velocity components at the probe location.
 
+> **Note**
+>
+> In order to quickly evaluate the monitored results from the function objects, gnuplot scripts are added to the `backward-step` case directory. Executing them automatically creates the diagramms for residuals, average inlet pressure and probe velocity components. By typing the following command in the terminal, the diagrams are automatically created using gnuplot and stored as **png** files:
+> ```
+> gnuplot create_plots.gnu
+>```
+
 ## Average inlet pressure
 
 Similar to the residuals data, the average inlet pressure is written to the file `postProcessing/averageInletPressure/0/surfaceFieldValue.dat` and can be plotted with any tool available, such as Microsoft Excel, gnuplot or python. The resulting diagram will look like follows:
@@ -19,3 +26,5 @@ The velocity components for each time step monitored by the `probes` function ob
 
 
 ## Velocity animation
+
+**Still missing**

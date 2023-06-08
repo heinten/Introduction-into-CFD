@@ -42,16 +42,17 @@ Once ready, you can scroll to the top of the page and click on the documentation
 
 ## Tasks for this tutorial
 
- - [ ] Create the mesh using `blockMesh`
- - [ ] Check the mesh quality using `checkMesh` and scale the mesh correctly using `transformPoints` 
- - [ ] Specify the types and values of the boundary conditions for kinematic pressure `p` and velocity `U` in the `0` folder
- - [ ] Correctly set the kinematic viscosity `nu` in the `physicalProperties` file to achieve a Reynolds-number of 250 at the inlet
- - [ ] Set the time step size `deltaT` to a value so that a maximum Courant number of $\text{Co} \approx 0.5$ is kept
- - [ ] Run the simulation using `pimpleFoam` and judge convergence using the residuals and average pressure at the inlet
- - [ ] Plot the velocity components for the probe point
- - [ ] Visualize the transient velocity field using ParaView and save an animation.
+  1. Create the mesh using `blockMesh`
+  2. Check the mesh quality using `checkMesh` and scale the mesh correctly using `transformPoints` 
+  3. Specify the types and values of the boundary conditions for kinematic pressure `p` and velocity `U` in the `0` folder
+  4. Correctly set the kinematic viscosity `nu` in the `physicalProperties` file to achieve a Reynolds-number of 250 at the inlet
+  5. Set the time step size `deltaT` to a value so that a maximum Courant number of $\text{Co} \approx 0.5$ is kept
+  6. Run the simulation using `pimpleFoam`
+  7. Judge convergence using the results from the function objects by plotting them with the provided gnuplot script
+  8. Visualize the transient velocity field using ParaView and save an animation.
 
 
 ## Additional tasks
 
 Once you have successfully finished the third tutoral, you can solve the following, additional tasks:
+  * Name three ways to increase the Reynolds-number of the numerical model to 2500. Choose one way and repeat the simulations this Reynolds-number. How does the velocity components at the probe location change? Create a new animation with both simulations side-by-side.
