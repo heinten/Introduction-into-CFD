@@ -42,17 +42,18 @@ Once ready, you can scroll to the top of the page and click on the documentation
 
 ## Tasks for this tutorial
 
-  1. Create the mesh using `blockMesh`
-  2. Check the mesh quality using `checkMesh` and scale the mesh correctly using `transformPoints` 
-  3. Specify the types and values of the boundary conditions for kinematic pressure `p` and velocity `U` in the `0` folder
-  4. Correctly set the kinematic viscosity `nu` in the `physicalProperties` file to achieve a Reynolds-number of 250 at the inlet
-  5. Set the time step size `deltaT` to a value so that a maximum Courant number of $\text{Co} \approx 0.5$ is kept
-  6. Run the simulation using `pimpleFoam`
-  7. Judge convergence using the results from the function objects by plotting them with the provided gnuplot script
-  8. Visualize the transient velocity field using ParaView and save an animation.
+  1. Open a terminal in the `backward-step` directory and source OpenFOAM.
+  2. Create the mesh using `blockMesh`, check its quality with `checkMesh` and scale the mesh correctly using the `transformPoints` utility, so its dimensions match the figure at the top.
+  3. Double-check the correct boundary conditions for kinematic pressure `p` and velocity `U` in the `0` folder. A uniform velocity of $1\\,\text{m/s}$ at the inlet has to be defined combined with a uniform pressure of $0\\,\text{m}^2\text{/s}^2$ at the outlet. Walls are set to no-slip for velocity and zero-gradient for pressure.
+  4. Correctly set the kinematic viscosity `nu` in the `physicalProperties` file to achieve a Reynolds-number of 250 with respect to the inlet.
+  5. Estimate a time step size so that a maximum Courant number of $\text{Co} \approx 0.5$ is reached and set it for the keywordk `deltaT` in the `controlDict`.
+  6. Run the simulation using `pimpleFoam` and plot the residuals for judging convergence.
+  7. Analyse the flow by using the area-weighted inlet pressure and velocity components at the probe location with the help of the provided Gnuplot script `create_plots.gnu`.
+  8. Create an animation showing the velocity magnitude with ParaView in order to visualize the transient flow field.
 
 
 ## Additional tasks
 
 Once you have successfully finished the third tutoral, you can solve the following, additional tasks:
-  * Name three ways to increase the Reynolds-number of the numerical model to 2500. Choose one way and repeat the simulations this Reynolds-number. How does the velocity components at the probe location change? Create a new animation with both simulations side-by-side.
+  * Adjust the kinematic viscosity to achieve a Reynolds-number of 2500. Run the simulation and compare the velocity components at the probe location with the numerical results at a Reynolds-number of 250.
+  * Create a new animation with ParaView showcasing the velocity magnitude for both Renyolds-numbers side by side. How did the flow field in general and the maximum flow specifically change? Are any changes to the time step size required?
