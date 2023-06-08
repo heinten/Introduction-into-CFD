@@ -43,10 +43,10 @@ Once ready, you can scroll to the top of the page and click on the documentation
 ## Tasks for this tutorial
 
   1. Open a terminal in the `backward-step` directory and source OpenFOAM.
-  2. Create the mesh using `blockMesh`, check its quality with `checkMesh` and scale the mesh correctly using the `transformPoints` utility, so its dimensions match the figure at the top.
+  2. Create the mesh using `blockMesh`, check its quality with `checkMesh`, and scale the mesh correctly using the `transformPoints` utility, so its dimensions match the figure at the top.
   3. Double-check the correct boundary conditions for kinematic pressure `p` and velocity `U` in the `0` folder. A uniform velocity of $1\\,\text{m/s}$ at the inlet has to be defined combined with a uniform pressure of $0\\,\text{m}^2\text{/s}^2$ at the outlet. Walls are set to no-slip for velocity and zero-gradient for pressure.
   4. Correctly set the kinematic viscosity `nu` in the `physicalProperties` file to achieve a Reynolds-number of 250 with respect to the inlet.
-  5. Estimate a time step size so that a maximum Courant number of $\text{Co} \approx 0.5$ is reached and set it for the keywordk `deltaT` in the `controlDict`.
+  5. Estimate a time step size so that a maximum Courant number of $\text{Co} \approx 0.5$ is reached and set accordingly in the `controlDict`.
   6. Run the simulation using `pimpleFoam` and plot the residuals for judging convergence.
   7. Analyse the flow by using the area-weighted inlet pressure and velocity components at the probe location with the help of the provided Gnuplot script `create_plots.gnu`.
   8. Create an animation showing the velocity magnitude with ParaView in order to visualize the transient flow field.

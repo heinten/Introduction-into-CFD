@@ -1,6 +1,6 @@
 # Pre-processing
 
-Before the simulation can be run, you have to create the mesh and configure the case. The following section explains the additional steps required for the backward-faceing step case based on the elbow case.
+Before the simulation can be run, you have to create the mesh and configure the case. The following section explains the additional steps required for the backward-facing step case based on the elbow case.
 
 ## OpenFOAM case structure
 
