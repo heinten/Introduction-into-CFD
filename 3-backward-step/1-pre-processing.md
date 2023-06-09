@@ -148,3 +148,11 @@ $$
 $$
 
 The characteristic velocity in the flow domain $U$ can be approximated to be equal to the inlet velocity $U_\text{in}$. Although the actual flow velocity will probably be higher further downstream the inlet, this give a sufficiently good estimate for computing the time step size $\Delta t$.
+
+
+## Discretization schemes and solver settings
+
+Compared to the previous tutorial case, there are three distinct in discretization schemes and solver settings in `fvSchemes` and `fvSolution` files:
+  * Since this is a transient simulation, the temporal disretization under `ddtSchemes` is set to first order explicit Euler with the entry `Euler` in `fvSchemes`.
+  * The pressure-velocity algorithm *PIMPLE* is employed by the solver, hence the name `pimpleFoam`. Therefore, there is a new entry in `fvSolution` called `PIMPLE`.
+  * Since transient simulations typically do not need relaxation factors, there is no `relaxationFactors` entry in `fvSolution`.
